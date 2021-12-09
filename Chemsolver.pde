@@ -4,8 +4,8 @@ public Ion Ammonium = new Ion("Ammonium", "NH", 1, +1);
 public Ion Acetate = new Ion("Acetate", "CHO", 1, -1);
 public Ion Sodium = new Ion("Sodium", "Na", 1, +1);
 JSONObject Ions;
-  int newSolCase;
-
+int newSolCase;
+boolean soluble;
 public void setup() {
   Ions = loadJSONObject("Ions.json");
 }
@@ -23,9 +23,14 @@ public Ion makeSalt(Ion a, Ion b ) {
   return Fish;
 }
 
-public boolean Solubility(){
+public boolean Solubility(Ion a, Ion b) {
 
-  
-  
-return true;
+  if (a.solCase == 1 || a.solCase == 1) {
+    soluble = true;
+  }
+  if (a.solCase == 2) {
+    if (((b.name.equalsIgnoreCase("nitrate")) || b.name.equalsIgnoreCase("Acetate")) || a.solCase == 2) {
+    }
+  }
+  return soluble;
 }
