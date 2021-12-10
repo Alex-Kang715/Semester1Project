@@ -2,5 +2,11 @@
 	"name": "Nitrate", 
 	"charge": -1, 
 	"solCase": 1, 
-	"Formula": "NO3"
+	"Formula": "NO₃",
 } 
+{   
+    "name": "Acetate",
+    "charge": -1,
+    "solCase": 1,
+    "formula": "C₂H₃O₂"
+}

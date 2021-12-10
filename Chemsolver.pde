@@ -15,10 +15,16 @@ public void draw() {
 
 public Ion makeSalt(Ion a, Ion b ) {
   if (a.solCase > b.solCase) {
-    newSolCase = a.solCase;
-  } else if (b.solCase > a.solCase) {
     newSolCase = b.solCase;
+  } else if (b.solCase > a.solCase) {
+    newSolCase = a.solCase;
   };
+  
+  /* while statement where you get cation charge. 
+  Add charge of anion. 
+  If below 0, add another cation. Repeat. 
+  If net charge = 0 return salt. */
+  
   Ion Fish = new Ion("a", "a", newSolCase, 1);
   return Fish;
 }
@@ -29,7 +35,10 @@ public boolean Solubility(Ion a, Ion b) {
     soluble = true;
   }
   if (a.solCase == 2) {
-    if (((b.name.equalsIgnoreCase("nitrate")) || b.name.equalsIgnoreCase("Acetate")) || a.solCase == 2) {
+    if (((b.name.equalsIgnoreCase("Lead")) || b.name.equalsIgnoreCase("Mercury")) || a.solCase == 2) {
+    soluble = false;
+    } else {
+      soluble = true;
     }
   }
   return soluble;
