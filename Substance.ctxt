@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Substance
+comment1.params=name\ formula
+comment1.target=Substance(java.lang.String,\ java.lang.String)
+numComments=2

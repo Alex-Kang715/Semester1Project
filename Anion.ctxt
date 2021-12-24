@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Anion
+comment1.params=name\ formula\ solCase\ charge\ polyatomic
+comment1.target=Anion(java.lang.String,\ java.lang.String,\ int,\ int,\ boolean)
+numComments=2

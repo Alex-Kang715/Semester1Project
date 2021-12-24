@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Ion
+comment1.params=name\ formula\ charge
+comment1.target=Ion(java.lang.String,\ java.lang.String,\ int)
+numComments=2
