@@ -1,20 +1,21 @@
 public class Salt {
-  boolean soluble;
-  String formula;
-  String name;
-  int cationCount;
-  int anionCount;
-  boolean cationPolyatomic;
-  boolean anionPolyatomic;
-  public Salt(String cationName, String cationFormula, int cationCount, String anionName, String anionFormula, int anionCount, int anionSolCase, boolean cationPolyatomic, boolean anionPolyatomic) {
+  String formula, name;
+  int cationCount, anionCount;
+  double molarMassCation, molarMassAnion, molarMass;
+  boolean cationPolyatomic, anionPolyatomic, soluble;
+  private String solubility;
+  public Salt(String cationName, String cationFormula, int cationCount, String anionName, String anionFormula, 
+  int anionCount, int anionSolCase, boolean cationPolyatomic, boolean anionPolyatomic, double molarMassCation, double molarMassAnion) {
     boolean soluble = solubility(cationName, anionSolCase);
     String name = name(cationName, anionName);
     String formula = formula(cationFormula, anionFormula, cationCount, anionCount, cationPolyatomic, anionPolyatomic);
+    double molarMass = molarMass(molarMassCation, molarMassAnion, cationCount, anionCount);
     this.soluble = soluble;
     this.name = name;
     this.cationCount = cationCount;
     this.anionCount = anionCount;
     this.formula = formula;
+    this.molarMass = molarMass;
   }
   private boolean solubility(String cationName, int anionSolCase) {
     boolean soluble = true;
@@ -53,6 +54,16 @@ public class Salt {
     }
     return soluble;
   }
+  public String displaySolubility(){
+    String solublility = null;
+    if(soluble == true){
+        solubility = "soluble";
+    }
+    if(soluble == false){
+        solubility= "insoluble";
+    }
+    return solubility;
+  }
   private String name(String cationName, String anionName) {
     return cationName + " " + anionName;
   }
@@ -83,5 +94,9 @@ public class Salt {
     } else {
       return "Error";
     }
+  }
+  private double molarMass(double molarMassCation,double molarMassAnion,int cationCount, int anionCount){
+      molarMass = (cationCount*molarMassCation) + (anionCount * molarMassAnion);
+      return molarMass;
   }
 }
